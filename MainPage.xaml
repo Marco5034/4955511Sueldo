@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:_4955511Sueldo.Models"
+             x:Class="_4955511Sueldo.MainPage">
+
+    <ContentPage.BindingContext>
+        <viewModel:CalculoSueldoViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <Label Text="Ingrese el sueldo del trabajador"/>
+
+            <Entry Text="{Binding Sueldo}"        
+        Keyboard="Numeric" />
+
+            <Label Text="Sueldo con aumento"  FontSize="24" 
+ HorizontalOptions="Center"/>
+
+            <Label Text="{Binding Sueldoaumentado}" 
+        FontSize="24" 
+        HorizontalOptions="Center" />
+
+            <Button
+         x:Name="CounterBtn"
+         Text="Calcular Sueldo"
+         Command="{Binding AumentarSueldoCommand}"
+         HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
